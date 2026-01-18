@@ -1,0 +1,17 @@
+/
+├─ index.html
+├─ assets/
+│  ├─ banner/
+│  │  └─ ff-banner.png        ← essa imagem que tu mandou
+│  ├─ bar/
+│  │  ├─ 1.png
+│  │  ├─ 2.png
+│  ├─ mercado/
+│  │  ├─ 1.png
+│  │  ├─ 2.png
+│  ├─ hotel/
+│  │  ├─ 1.png
+│  │  ├─ 2.png
+│  ├─ locadora/
+│     ├─ 1.png
+│     ├─ 2.png

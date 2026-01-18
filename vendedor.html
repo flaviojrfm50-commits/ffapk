@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Seja um Vendedor | FF Soluções</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Segoe UI',system-ui,sans-serif;
+}
+body{
+  margin:0;
+  background:#020617;
+  color:#e5e7eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background:#0f172a;
+  border-radius:20px;
+  padding:26px;
+  border:1px solid rgba(56,189,248,.35);
+  box-shadow:0 0 40px rgba(56,189,248,.25);
+}
+
+.card h2{
+  text-align:center;
+  color:#38bdf8;
+  margin-bottom:8px;
+}
+
+.card p{
+  text-align:center;
+  font-size:14px;
+  opacity:.85;
+  margin-bottom:22px;
+}
+
+label{
+  font-size:13px;
+  opacity:.85;
+}
+
+input, select{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:16px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  background:#020617;
+  color:#fff;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  color:#020617;
+  border:none;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+button:hover{
+  background:#16a34a;
+  transform:scale(1.03);
+}
+
+.info{
+  margin-top:14px;
+  font-size:13px;
+  text-align:center;
+  opacity:.75;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Seja um Vendedor FF</h2>
+  <p>
+    Ganhe <b>50%</b> na ativação  
+    + <b>10%</b> nas mensalidades
+  </p>
+
+  <label>Nome completo</label>
+  <input id="nome" placeholder="Seu nome">
+
+  <label>WhatsApp</label>
+  <input id="whats" placeholder="DDD + número">
+
+  <label>Cidade / Estado</label>
+  <input id="cidade" placeholder="Ex: São Raimundo Nonato - PI">
+
+  <label>Já trabalha com vendas?</label>
+  <select id="experiencia">
+    <option>Não</option>
+    <option>Sim</option>
+  </select>
+
+  <label>Qual sistema deseja vender?</label>
+  <select id="sistema">
+    <option>Bar & Restaurante</option>
+    <option>Mercado</option>
+    <option>Hotel & Pousada</option>
+    <option>Locadora de Veículos</option>
+  </select>
+
+  <button onclick="enviar()">Enviar cadastro</button>
+
+  <div class="info">
+    O envio será feito direto pelo WhatsApp
+  </div>
+</div>
+
+<script>
+function enviar(){
+  const nome = document.getElementById("nome").value;
+  const whats = document.getElementById("whats").value;
+  const cidade = document.getElementById("cidade").value;
+  const exp = document.getElementById("experiencia").value;
+  const sistema = document.getElementById("sistema").value;
+
+  const msg = `
+📌 *Cadastro de Vendedor FF Soluções*
+
+👤 Nome: ${nome}
+📱 WhatsApp: ${whats}
+📍 Cidade: ${cidade}
+💼 Experiência em vendas: ${exp}
+🧩 Sistema de interesse: ${sistema}
+
+💰 Comissão:
+- 50% taxa de ativação
+- 10% mensalidade recorrente
+`;
+
+  const url = `https://wa.me/5589981452698?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

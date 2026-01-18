@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FF Soluções | Sistema para mercado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* ===== TOPO ===== */
+.header {
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.header h1 {
+  color: #38bdf8;
+  font-size: 1.8rem;
+}
+
+/* ===== GALERIA VERTICAL ===== */
+.gallery {
+  max-width: 520px; /* largura estilo celular */
+  margin: auto;
+  padding: 20px 16px;
+
+  display: flex;
+  flex-direction: column; /* ORDEM GARANTIDA */
+  gap: 28px;
+}
+
+/* ===== MOLDURA DE CELULAR ===== */
+.phone-frame {
+  background: #020617;
+  border-radius: 30px;
+  padding: 12px;
+
+  border: 2px solid rgba(56,189,248,.85);
+
+  box-shadow:
+    0 0 30px rgba(56,189,248,.5),
+    inset 0 0 25px rgba(56,189,248,.25);
+
+  transition: .35s;
+}
+
+.phone-frame:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 45px rgba(56,189,248,.85),
+    inset 0 0 35px rgba(56,189,248,.35);
+}
+
+/* ===== IMAGEM VERTICAL ===== */
+.phone-frame img {
+  width: 100%;
+  aspect-ratio: 9 / 16;   /* força formato celular */
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+/* ===== BOTÕES ===== */
+.actions {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.actions a {
+  display: inline-block;
+  margin: 8px;
+  padding: 14px 32px;
+  background: #22c55e;
+  color: #020617;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* ===== MOBILE EXTRA ===== */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    padding: 16px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== TÍTULO ===== -->
+<div class="header">
+  <h1>Sistema para Mercado</h1>
+</div>
+
+<!-- ===== GALERIA (ORDEM 1 → 5) ===== -->
+<div class="gallery">
+
+  <div class="phone-frame">
+    <img src="mercado/1.png" alt="Tela 1 do sistema de Bar">
+  </div>
+
+  <div class="phone-frame">
+    <img src="mercado/2.png" alt="Tela 2 do sistema de Bar">
+  </div>
+
+  <div class="phone-frame">
+    <img src="mercado/3.png" alt="Tela 3 do sistema de Bar">
+  </div>
+
+  <div class="phone-frame">
+    <img src="mercado/4.png" alt="Tela 4 do sistema de Bar">
+  </div>
+
+  <div class="phone-frame">
+    <img src="mercado/5.png" alt="Tela 5 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/6.png" alt="Tela 6 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/7.png" alt="Tela 7 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/8.png" alt="Tela 8 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/9.png" alt="Tela 9 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/10.png" alt="Tela 10 do sistema de Bar">
+  </div>
+  <div class="phone-frame">
+    <img src="mercado/11.png" alt="Tela 11 do sistema de Bar">
+  </div>
+
+</div>
+
+<!-- ===== AÇÕES ===== -->
+<div class="actions">
+  <a href="index.html">⬅ Voltar</a>
+  <a href="https://wa.me/5589981452698" target="_blank">
+    💬 WhatsApp FF Soluções
+  </a>
+</div>
+
+</body>
+</html>
