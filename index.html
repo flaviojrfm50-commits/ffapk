@@ -30,11 +30,7 @@ body{
   box-shadow:
     0 0 25px rgba(56,189,248,.6),
     inset 0 0 35px rgba(56,189,248,.25);
-  transition:transform .6s ease,box-shadow .6s ease;
-}
-
-.hero:hover{
-  transform:translateY(-6px) scale(1.01);
+  transition:.4s;
 }
 
 /* ================= SECTION ================= */
@@ -95,7 +91,7 @@ section{
   text-decoration:none;
 }
 
-/* ================= VIDEOS (PADRÃO + LEVES) ================= */
+/* ================= VIDEOS ================= */
 .video-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -105,8 +101,6 @@ section{
 }
 
 .video-frame{
-  position:relative;
-  width:100%;
   aspect-ratio:9/16;
   border-radius:14px;
   overflow:hidden;
@@ -127,15 +121,13 @@ section{
 }
 
 .extra-actions a{
-  display:inline-block;
-  margin:8px;
   padding:14px 30px;
   border-radius:30px;
+  background:#38bdf8;
+  color:#020617;
   font-weight:800;
   text-decoration:none;
 }
-
-.btn-panel{background:#38bdf8;color:#020617;}
 
 /* ================= VENDEDOR ================= */
 .vendedor{
@@ -222,10 +214,35 @@ footer{
   font-size:.85rem;
 }
 
-/* MOBILE */
+/* ================= MOBILE AJUSTES ================= */
 @media(max-width:768px){
-  .hero{height:32vh;}
-  .video-grid{grid-template-columns:1fr 1fr;}
+  /* Banner sem corte */
+  .hero{
+    height:auto;
+    aspect-ratio:16/9;
+    background-size:contain;
+    background-repeat:no-repeat;
+  }
+
+  /* Cards verticais */
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .card img{
+    height:220px;
+  }
+
+  /* Vídeos */
+  .video-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:480px){
+  .grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -240,69 +257,65 @@ footer{
   <div class="section-title"><h2>Nossos Sistemas</h2></div>
 
   <div class="grid">
-    <div class="card"><img src="bar/1.png"><div class="card-content"><h3>Bar & Restaurante</h3><p>Gestão completa.</p><a href="ffbar.html">Ver sistema</a></div></div>
-    <div class="card"><img src="mercado/1.png"><div class="card-content"><h3>Mercado</h3><p>Caixa e estoque.</p><a href="mercado.html">Ver sistema</a></div></div>
-    <div class="card"><img src="hotel/1.png"><div class="card-content"><h3>Hotel & Pousada</h3><p>Reservas online.</p><a href="hotel.html">Ver sistema</a></div></div>
-    <div class="card"><img src="locadora/1.png"><div class="card-content"><h3>Locadora</h3><p>Aluguel inteligente.</p><a href="locadora.html">Ver sistema</a></div></div>
+    <div class="card">
+      <img src="bar/1.png">
+      <div class="card-content">
+        <h3>Bar & Restaurante</h3>
+        <p>Gestão completa.</p>
+        <a href="ffbar.html">Ver sistema</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="mercado/1.png">
+      <div class="card-content">
+        <h3>Mercado</h3>
+        <p>Caixa e estoque.</p>
+        <a href="mercado.html">Ver sistema</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="hotel/1.png">
+      <div class="card-content">
+        <h3>Hotel & Pousada</h3>
+        <p>Reservas online.</p>
+        <a href="hotel.html">Ver sistema</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="locadora/1.png">
+      <div class="card-content">
+        <h3>Locadora</h3>
+        <p>Aluguel inteligente.</p>
+        <a href="locadora.html">Ver sistema</a>
+      </div>
+    </div>
   </div>
 
   <div class="extra-actions">
-    <a href="/painel.html" class="btn-panel">Ir para o painel</a>
+    <a href="/painel.html">Ir para o painel</a>
   </div>
 </section>
+
 <section>
   <div class="section-title"><h2>Conheça nossos planos</h2></div>
 
   <div class="grid">
-    <div class="card">
-      <div class="card-content">
-        <h3>Plano Básico</h3>
-        <p>
-          ✔ 2 funcionários<br>
-          ✔ Painel administrativo<br>
-          ✔ Suporte padrão
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-        <h3>Plano Intermediário</h3>
-        <p>
-          ✔ 5 funcionários<br>
-          ✔ Painel completo<br>
-          ✔ Relatórios
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-        <h3>Plano Completo</h3>
-        <p>
-          ✔ Funcionários ilimitados<br>
-          ✔ Site público<br>
-          ✔ Integrações avançadas
-        </p>
-      </div>
-    </div>
+    <div class="card"><div class="card-content"><h3>Plano Básico</h3><p>✔ 2 funcionários<br>✔ Painel admin</p></div></div>
+    <div class="card"><div class="card-content"><h3>Plano Intermediário</h3><p>✔ 5 funcionários<br>✔ Painel completo</p></div></div>
+    <div class="card"><div class="card-content"><h3>Plano Completo</h3><p>✔ Ilimitado<br>✔ Site público</p></div></div>
   </div>
 </section>
 
-<!-- ================= VIDEOS ================= -->
 <section>
   <div class="section-title"><h2>Demonstrações em Vídeo</h2></div>
 
   <div class="video-grid">
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/_oqJ_GhEsUE" allowfullscreen></iframe>
-    </div>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/2SLp2wXOHWQ" allowfullscreen></iframe>
-    </div>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/NvtQcdnkZq8" allowfullscreen></iframe>
-    </div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/_oqJ_GhEsUE" allowfullscreen></iframe></div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/2SLp2wXOHWQ" allowfullscreen></iframe></div>
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/NvtQcdnkZq8" allowfullscreen></iframe></div>
   </div>
 </section>
 
