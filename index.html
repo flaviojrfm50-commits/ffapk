@@ -35,9 +35,6 @@ body{
 
 .hero:hover{
   transform:translateY(-6px) scale(1.01);
-  box-shadow:
-    0 0 45px rgba(56,189,248,.9),
-    inset 0 0 45px rgba(56,189,248,.35);
 }
 
 /* ================= SECTION ================= */
@@ -52,9 +49,7 @@ section{
   margin-bottom:30px;
 }
 
-.section-title h2{
-  color:#38bdf8;
-}
+.section-title h2{color:#38bdf8;}
 
 /* ================= GRID ================= */
 .grid{
@@ -68,26 +63,18 @@ section{
   border:1px solid rgba(56,189,248,.25);
   border-radius:18px;
   overflow:hidden;
-  transition:transform .25s ease, box-shadow .25s ease;
-  transform-style:preserve-3d;
-  perspective:800px;
+  transition:.25s;
 }
 
 .card:hover{
-  box-shadow:
-    0 15px 40px rgba(56,189,248,.35),
-    inset 0 0 20px rgba(56,189,248,.15);
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(56,189,248,.35);
 }
 
 .card img{
   width:100%;
   height:180px;
   object-fit:cover;
-  transition:transform .35s ease;
-}
-
-.card:hover img{
-  transform:scale(1.06);
 }
 
 .card-content{
@@ -106,33 +93,32 @@ section{
   border-radius:24px;
   font-weight:700;
   text-decoration:none;
+}
+
+/* ================= VIDEOS (PADRÃO + LEVES) ================= */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.video-frame{
   position:relative;
-  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(56,189,248,.25);
+  box-shadow:0 0 14px rgba(56,189,248,.25);
 }
 
-.card-content a:hover{
-  transform:translateY(-4px) scale(1.04);
-  background:#16a34a;
-  box-shadow:
-    0 0 15px rgba(34,197,94,.6),
-    0 0 35px rgba(34,197,94,.4);
+.video-frame iframe{
+  width:100%;
+  height:100%;
+  border:none;
 }
-
-.card:hover .card-content a{
-  transform:translateY(-3px);
-}
-
-.card-content a::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:24px;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
-  opacity:0;
-  transition:opacity .3s ease;
-}
-
-.card-content a:hover::after{opacity:1;}
 
 /* ================= AÇÕES ================= */
 .extra-actions{
@@ -150,7 +136,6 @@ section{
 }
 
 .btn-panel{background:#38bdf8;color:#020617;}
-.btn-planos{background:transparent;color:#38bdf8;border:1px solid rgba(56,189,248,.6);}
 
 /* ================= VENDEDOR ================= */
 .vendedor{
@@ -194,21 +179,6 @@ section{
   width:90%;
   max-width:380px;
   border:1px solid rgba(56,189,248,.6);
-  box-shadow:
-    0 0 30px rgba(56,189,248,.6),
-    inset 0 0 25px rgba(56,189,248,.25);
-  animation:modalIn .6s ease, floatModal 4s ease-in-out infinite;
-}
-
-@keyframes modalIn{
-  from{opacity:0;transform:translateY(25px) scale(.97);}
-  to{opacity:1;transform:translateY(0) scale(1);}
-}
-
-@keyframes floatModal{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-6px);}
-  100%{transform:translateY(0);}
 }
 
 .modal-box h3{color:#38bdf8;margin-bottom:12px;}
@@ -229,15 +199,6 @@ section{
   border-radius:30px;
   font-weight:800;
   border:none;
-  cursor:pointer;
-}
-
-.modal-box span{
-  display:block;
-  text-align:center;
-  margin-top:10px;
-  opacity:.7;
-  cursor:pointer;
 }
 
 /* ================= BOTÃO FIXO ================= */
@@ -251,7 +212,6 @@ section{
   border-radius:40px;
   font-weight:800;
   border:none;
-  cursor:pointer;
 }
 
 /* ================= FOOTER ================= */
@@ -264,7 +224,8 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero:hover{transform:none;}
+  .hero{height:32vh;}
+  .video-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
@@ -286,74 +247,70 @@ footer{
   </div>
 
   <div class="extra-actions">
-    <a href="/painel.html" class="btn-panel">Ir para o painel.html</a>
-    
+    <a href="/painel.html" class="btn-panel">Ir para o painel</a>
   </div>
+</section>
 <section>
-  <div class="section-title">
-    <h2>Conheça nossos planos</h2>
-  </div>
+  <div class="section-title"><h2>Conheça nossos planos</h2></div>
 
   <div class="grid">
-
-    <!-- PLANO BÁSICO -->
     <div class="card">
       <div class="card-content">
         <h3>Plano Básico</h3>
         <p>
-          ✔ Até 2 funcionários<br>
+          ✔ 2 funcionários<br>
           ✔ Painel administrativo<br>
-          ✔ Tela do funcionário<br>
-          ❌ Sem site público
+          ✔ Suporte padrão
         </p>
-        <a href="https://wa.me/5589981452698?text=Tenho%20interesse%20no%20Plano%20B%C3%A1sico" target="_blank">
-          Solicitar orçamento
-        </a>
       </div>
     </div>
 
-    <!-- PLANO INTERMEDIÁRIO -->
     <div class="card">
       <div class="card-content">
         <h3>Plano Intermediário</h3>
         <p>
-          ✔ Até 5 funcionários<br>
-          ✔ Painel administrativo completo<br>
-          ✔ Telas dos funcionários<br>
-          ❌ Sem site público
+          ✔ 5 funcionários<br>
+          ✔ Painel completo<br>
+          ✔ Relatórios
         </p>
-        <a href="https://wa.me/5589981452698?text=Tenho%20interesse%20no%20Plano%20Intermedi%C3%A1rio" target="_blank">
-          Solicitar orçamento
-        </a>
       </div>
     </div>
 
-    <!-- PLANO COMPLETO -->
     <div class="card">
       <div class="card-content">
         <h3>Plano Completo</h3>
         <p>
           ✔ Funcionários ilimitados<br>
-          ✔ Painel administrativo avançado<br>
-          ✔ Telas dos funcionários<br>
-          ✔ Site público para divulgação<br>
-          ✔ Operação simples e moderna
+          ✔ Site público<br>
+          ✔ Integrações avançadas
         </p>
-        <a href="https://wa.me/5589981452698?text=Tenho%20interesse%20no%20Plano%20Completo" target="_blank">
-          Solicitar orçamento
-        </a>
       </div>
     </div>
-
   </div>
 </section>
 
-  <div class="vendedor">
-    <h2>Seja um vendedor FF Soluções</h2>
-    <p>Ganhe 50% na ativação + 10% mensal</p>
-    <a href="#" onclick="openVendedor()">Quero ser vendedor</a>
+<!-- ================= VIDEOS ================= -->
+<section>
+  <div class="section-title"><h2>Demonstrações em Vídeo</h2></div>
+
+  <div class="video-grid">
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/_oqJ_GhEsUE" allowfullscreen></iframe>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/2SLp2wXOHWQ" allowfullscreen></iframe>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/NvtQcdnkZq8" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
+
+<div class="vendedor">
+  <h2>Seja um vendedor FF Soluções</h2>
+  <p>Ganhe 50% na ativação + 10% mensal</p>
+  <a href="#" onclick="openVendedor()">Quero ser vendedor</a>
+</div>
 
 <footer>© FF Soluções — tecnologia que vende, organiza e escala.</footer>
 
@@ -362,62 +319,18 @@ footer{
 <div class="modal" id="modalVendedor">
   <div class="modal-box">
     <h3>Cadastro de Vendedor</h3>
-    <input id="v_nome" placeholder="Nome completo">
-    <input id="v_whats" placeholder="WhatsApp">
-    <input id="v_cidade" placeholder="Cidade / Estado">
-    <textarea id="v_msg" placeholder="Por que quer ser vendedor?"></textarea>
-    <button onclick="enviarVendedor()">Enviar no WhatsApp</button>
-    <span onclick="closeVendedor()">Cancelar</span>
+    <input placeholder="Nome completo">
+    <input placeholder="WhatsApp">
+    <textarea placeholder="Mensagem"></textarea>
+    <button onclick="window.open('https://wa.me/5589981452698','_blank')">
+      Enviar no WhatsApp
+    </button>
   </div>
 </div>
 
 <script>
 function openVendedor(){
   document.getElementById("modalVendedor").classList.add("show");
-}
-function closeVendedor(){
-  document.getElementById("modalVendedor").classList.remove("show");
-}
-
-function enviarVendedor(){
-  const nome=document.getElementById("v_nome").value;
-  const whats=document.getElementById("v_whats").value;
-  const cidade=document.getElementById("v_cidade").value;
-  const msg=document.getElementById("v_msg").value;
-
-  if(!nome||!whats){
-    alert("Preencha nome e WhatsApp");
-    return;
-  }
-
-  const texto=`📩 Cadastro de Vendedor FF Soluções
-
-👤 Nome: ${nome}
-📱 WhatsApp: ${whats}
-📍 Cidade: ${cidade}
-
-📝 Mensagem:
-${msg}
-
-💰 Comissão:
-50% ativação + 10% mensal`;
-
-  window.open("https://wa.me/5589981452698?text="+encodeURIComponent(texto),"_blank");
-}
-
-/* efeito 3D desktop */
-if(window.innerWidth>768){
-  document.querySelectorAll(".card").forEach(card=>{
-    card.addEventListener("mousemove",e=>{
-      const r=card.getBoundingClientRect();
-      const x=e.clientX-r.left;
-      const y=e.clientY-r.top;
-      const rx=((y/r.height)-.5)*-8;
-      const ry=((x/r.width)-.5)*8;
-      card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-    });
-    card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");
-  });
 }
 </script>
 
